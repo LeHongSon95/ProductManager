@@ -1,0 +1,17 @@
+<img  style="width: 50px" src="" id="avatar"
+alt="">
+<input type="file" accept="image/gif, image/jpeg, image/png" name="imageFile"
+onchange="chooseFile(this)" id="avatar" class="form-control">
+
+<script>
+     function chooseFile(fileInput) {
+        if (fileInput.file && fileInput.file[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('#avatar').attr('src', e.target.result);
+                reader.readAsDataURL(fileInput.file[0]);
+            }
+        }
+    }
+</script>
